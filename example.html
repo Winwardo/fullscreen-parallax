@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Fullscreen Parallax example</title>
+
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+		<script src="fullscreenParallax-0.1.0.js"></script>
+		<script>
+			$(fullscreenParallax);
+		</script>
+
+		<style>
+		html {
+			height: 100%;
+		}
+
+		.container {
+			color: white;
+			background-color: rgba(16, 16, 16, 0.55);
+		}
+		</style>
+
+	</head>
+	<body>
+
+		<section data-parallax-image="img/piano.jpg" data-background-speed="0.5" data-parallax-stick="bottom" class="parallax">
+			<div class="container">
+				<h1>Page number 1</h1>
+				<p>
+					Put all sorts of awesome content in here. This is the first page users will see, so naturally you want this to be interesting and grab their attention.
+				</p>
+				<p>
+					<code>
+					&lt;section data-parallax-image="img/piano.jpg" data-background-speed="0.5" data-parallax-stick="bottom" class="parallax"&gt;
+					</code>
+				</p>
+			</div>
+		</section>
+
+		<section data-parallax-image="img/saxo.jpg" data-background-speed="1" data-parallax-stick="top" class="parallax">
+			<div class="container">
+				<h1>Page number 2</h1>
+				<p>
+					More information about why your website is awesome.
+				</p>
+				<p>
+					<code>
+					&lt;section data-parallax-image="img/saxo.jpg" data-background-speed="1" data-parallax-stick="top" class="parallax"&gt;
+					</code>
+				</p>
+			</div>
+		</section>
+
+		<section data-parallax-image="img/percussion.jpg" data-background-speed="0" data-parallax-stick="top" class="parallax">
+			<div class="container">
+				<h1>Page number 3</h1>
+				<p>
+					More information about why your website is awesome.
+				</p>
+				<p>
+					<code>
+					&lt;section data-parallax-image="img/percussion.jpg" data-background-speed="0" data-parallax-stick="top" class="parallax"&gt;
+					</code>
+				</p>
+			</div>
+		</section>
+
+
+		<section style="height: 200px; adisplay: none;">
+			<div class="container">
+				<h1>Some white space</h1>
+				<p>
+					Because why the hell not?
+				</p>
+			</div>
+		</section>
+
+		<section data-parallax-image="img/ukelele.jpg" data-background-speed="0.5" data-parallax-stick="bottom" class="parallax">
+			<div class="container">
+				<h1>Page number 4</h1>
+				<p>
+					More information about why your website is awesome.
+				</p>
+				<p>
+					<code>
+					&lt;section data-parallax-image="img/ukelele.jpg" data-background-speed="0.5" data-parallax-stick="bottom" class="parallax"&gt;
+					</code>
+				</p>
+			</div>
+		</section>
+
+	</body>
+</html>
