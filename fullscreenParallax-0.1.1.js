@@ -24,10 +24,11 @@ SOFTWARE.
 
 /**
  * The Fullscreen Parallax script
- * By Topher Winward (@winwardo), 2014
+ * By Topher Winward (@Winwardo), 2014
  * http://winwardo.co.uk
+ * Version 0.1.1
  *
- * The latest version of this script can be found at http://github.com/winwardo/fullscreen-parallax
+ * The latest version of this script can be found at http://github.com/Winwardo/fullscreen-parallax
  */
 
 function fullscreenParallax () {
@@ -57,9 +58,6 @@ function fullscreenParallax () {
 			$this.css({ "background-position": "50% " + yPosition + "px"})
 		});
 	});
-
-	// Force an update on page load
-	$(window).scroll();
 
 	// When the window resizes, make the parallax sections resize accordingly
 	$(window).resize(function() {
