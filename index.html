@@ -1,0 +1,274 @@
+<html>
+	<head>
+		<title>Fullscreen Parallax example</title>
+
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/prettify.css" />
+
+		
+
+		<style>
+		html {
+			height: 100%;
+		}
+
+		.blackbox {
+			color: white;
+			background-color: rgba(16, 16, 16, 0.55);
+			margin-top: 30px;
+			padding: 8px;
+
+			border-radius: 8px;
+			position: relative;
+		}
+
+		.glyphicon {
+			position: absolute;
+			right: 32px;
+
+			color: white;
+			font-size: 3em;
+
+			cursor: pointer; cursor: hand;
+		}
+
+		.glyphicon-chevron-down {
+			top: 100%;
+			margin-top: -62px;
+		}
+
+		.glyphicon-chevron-up {			
+			top: 16px;
+		}
+
+		h1 {
+			margin-top: 4px;
+		}
+
+		section {
+			position: relative;
+		}
+
+		</style>
+
+	</head>
+	<body>
+
+		<section class="parallax" data-parallax-height="20" id="one" style="min-height: 180px;">
+			<div class="container">
+				<br>
+				<h1>fullscreen-parallax</h1>
+				<p>More and more websites are using parallax styled background to make their websites look awesome. <b>fullscreen-parallax</b> does all the hard work for you and allows you to to super easily create webpages using a parallaxing effect.</p>
+				<p>Click the arrow in the bottom right to scroll down smoothly and learn more!&nbsp;&nbsp;&nbsp;<a href="https://raw2.github.com/Winwardo/fullscreen-parallax/master/fullscreenParallax-0.1.1.min.js" class="btn btn-info">Quick download link</a></p>
+			</div>
+		</section>
+
+		<section data-background-speed-y="0.5" data-parallax-align="top" class="parallax" data-parallax-height="80" data-parallax-offset-y-percent="-20" style="background-image: url(img/forest2.jpg);">
+			<div class="container">
+				<div class="blackbox">
+					<h1>How do I use fullscreen-parallax?</h1>
+					<p>
+						It's super simple. To create a parallax with the minimum settings, just use the following code:
+					</p>
+						<pre class="prettyprint linenums lang-html">
+&lt;section data-background-speed="0.5" class="parallax"&gt;
+	Any text, or internal divs and whatnot go here!
+&lt;/section&gt;</pre>
+					<p>followed by hooking the script into jQuery's document.ready function:</p>
+						<pre class="prettyprint linenums lang-javascript">
+$(fullscreenParallax);</pre>
+					<p>
+						Note, using a <code>div</code>, or other block will work fine. It doesn't have to be <code>section</code> specifically.
+					</p>
+				</div>
+			</div>
+			<span class="glyphicon glyphicon-chevron-down" data-href="#two"></span>
+		</section>
+
+
+		<section data-background-speed-y="0.3" data-parallax-align="bottom" class="parallax" style="background-image: url(img/mountain2.jpg);" id="two">
+			<div class="container">
+				<div class="blackbox">					
+					<h1>Main options</h1>
+					<p>
+						<table class="table table-bordered" style="background-color: white;">
+							<thead>
+								<tr style="background-color: #eee;">
+									<th>data-</th>
+									<th>Description</th>
+									<th>Reasonable values</th>
+									<th>Default</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>background-speed-y</td>
+									<td>The rate of scrolling vertically. A value of 1 means "scroll with page" like a normal image would, 0 is "don't scroll relatively".</td>
+									<td>-1 to 1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>background-speed-x</td>
+									<td>The rate of scrolling horizontally. A value of 0 means "don't scroll", negative values move to the right, positive to the left.</td>
+									<td>-1 to 1</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>parallax-align</td>
+									<td>Whether the image should stick to the top or bottom of the parallax section.</td>
+									<td>"top" | "bottom"</td>
+									<td>"top"</td>
+								</tr>
+								<tr>
+									<td>parallax-stick-y</td>
+									<td>Should the vertical parallax effect stop once it has reached its position? (Hard to explain, see example below)</td>
+									<td>"before" | "after"</td>
+									<td>""</td>
+								</tr>
+								<tr>
+									<td>parallax-stick-x</td>
+									<td>Should the horizontal parallax effect stop once it has reached its position? (Hard to explain, see example below)</td>
+									<td>"before" | "after"</td>
+									<td>""</td>
+								</tr>
+								<tr>
+									<td>parallax-height</td>
+									<td>What percent size of the screen to fill up.</td>
+									<td>0 - 100</td>
+									<td>100</td>
+								</tr>
+								<tr>
+									<td>parallax-offset-y-percent</td>
+									<td>How much to offset the image by vertically.</em></td>
+									<td>-100 to 100</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>parallax-offset-x-percent</td>
+									<td>How much to offset the image by horizontally.</em></td>
+									<td>-100 to 100</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+				</div>
+			</div>
+			<span class="glyphicon glyphicon-chevron-up" data-href="#one"></span>
+			<span class="glyphicon glyphicon-chevron-down" data-href="#three"></span>
+		</section>
+
+
+		<section data-background-speed-y="0" data-background-speed-x="-0.1" data-parallax-align="top" data-parallax-height="25" data-parallax-offset-y-percent="0" class="parallax" style="background-image: url(img/cat.jpg);" id="three">
+			<span class="glyphicon glyphicon-chevron-up" data-href="#two"></span>
+		</section>
+
+		<section data-background-speed-y="0.5" data-parallax-align="top" data-parallax-height="25" data-parallax-offset-y-percent="-50" class="parallax" style="background-image: url(img/cat.jpg);">
+		</section>
+
+		<section data-background-speed-y="-0.3" data-parallax-align="top" data-parallax-height="25" data-parallax-offset-y-percent="52" class="parallax" style="background-image: url(img/cat.jpg);">
+		</section>
+
+		<section data-background-speed-y="0.5" data-parallax-align="top" data-parallax-height="25" data-parallax-offset-y-percent="-150" class="parallax" style="background-image: url(img/cat.jpg);">
+			<span class="glyphicon glyphicon-chevron-down" data-href="#four"></span>
+		</section>
+
+
+
+		<section data-background-speed-y="0.3" data-background-speed-x="0.5" data-parallax-stick-x="before" data-parallax-align="bottom" class="parallax" style="background-image: url(img/city.jpg); background-repeat: repeat-y;" id="four">
+			<div class="container">
+				<div class="blackbox">
+					<h1>Stickyness</h1>
+					<p>
+						This section is an example of <pre>data-parallax-stick-x="before"</pre> in action.
+					</p>
+					<br>
+					<p>
+						The code for this section is:
+						<pre class="prettyprint linenums lang-html">&lt;section data-background-speed-y="0.3" data-background-speed-x="0.5" data-parallax-stick-x="before" data-parallax-align="bottom" class="parallax" style="background-image: url(img/mountain.jpg); background-repeat: repeat-y;"&gt;</pre>
+					</p>
+				</div>
+			</div>
+			<span class="glyphicon glyphicon-chevron-up" data-href="#three"></span>
+			<span class="glyphicon glyphicon-chevron-down" data-href="#five"></span>
+		</section>
+
+
+		<section data-background-speed-y="0" data-parallax-align="bottom" class="parallax" style="background-image: url(img/acropolis.jpg);" id="five">
+			<div class="container">
+				<div class="blackbox">
+					<h1>background-speed-y="0"</h1>
+					<p>
+						This and the next section demonstrate "static" backgrounds.
+					</p>
+					<br>
+					<p>
+						The code for this section is:
+						<pre class="prettyprint linenums lang-html">&lt;section data-background-speed-y="0" data-parallax-align="bottom" class="parallax" style="background-image: url(img/museum.jpg);"&gt;</pre>
+					</p>
+				</div>
+			</div>
+			<span class="glyphicon glyphicon-chevron-up" data-href="#four"></span>
+			<span class="glyphicon glyphicon-chevron-down" data-href="#six"></span>
+		</section>
+
+		<section data-background-speed-y="0" data-parallax-align="bottom" class="parallax" style="background-image: url(img/sunset.jpg);" id="six">
+			<div class="container">
+				<div class="blackbox">
+					<h1>Download!</h1>
+					<br>
+					<div class="col-xs-12">
+						<div class="col-md-4" style="text-align: center;">					
+							<a href="https://github.com/Winwardo/fullscreen-parallax" class="btn btn-info btn-lg">Click here for<br>the GitHub repo!</a>
+						</div>
+						<div class="col-md-4" style="text-align: center;">					
+							<a href="https://raw2.github.com/Winwardo/fullscreen-parallax/master/fullscreenParallax-0.1.1.min.js" class="btn btn-success btn-lg">Click here for a direct,<br>minified download!</a>
+						</div>
+						<div class="col-md-4" style="text-align: center;">					
+							<a href="http://winwardo.co.uk" class="btn btn-primary btn-lg">Click here to see<br>what else I do!</a>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<hr>
+					<br>
+					<br>
+					<p>
+						<h3 style="text-align: center;">Enjoy using fullscreen-parallax, and if you have any questions, issues, or want to show off a place you've used it, feel free to shoot me an email at topher@winwardo.co.uk!</h3>
+					</p>
+					<br>
+					<br>
+					<p>
+						All images found on flickr under a Creative Commons license. Original images can be found <a href="https://secure.flickr.com/photos/kelehen/8110285669/sizes/l/">here</a>, <a href="https://secure.flickr.com/photos/blmiers2/6153938935/sizes/l/">here</a>, <a href="https://secure.flickr.com/photos/doug88888/3253913119/">here</a>, <a href="https://secure.flickr.com/photos/ghassantabet/130679469/sizes/l/">here</a>, <a href="https://secure.flickr.com/photos/jp_photo_online/7832798826/sizes/l/">here</a>, and finally <a href="https://secure.flickr.com/photos/freefoto/1239736679/sizes/o/in/photolist-2TxYwk-3UpbtM-47CRVe-4c8hTn-4hoPVQ-4zySqx-4zz4Qt-4zDjRA-4zDmgo-4AxCXN-4S2Lzw-4SMGFr-4ST2rh-4UN7Ag-4YE2Ps-55iKk2-55HJes-5cE23Q-5eeNie-5eA3WW-5nvaRN-5saEMh-5srHXK-5sXn2M-5wyzpM-5wyEFU-5Azo5p-5E8FJU-5GGArr-5JE811-5WujLc-5YRxtW-64j88S-64uLVH-64DheR-65kyXE-662T9A-6bjMRL-76gV5H-7ekxtL-7fADmS-7jXxDZ-7u4cr1-7vYbAX-8gCYcU-dCCQ6p-8HLbDN-bmQUX5-bhqByt-aub95Q-bysnVJ/">here</a>! Many thanks to all the original photographers.
+					</p>
+				</div>
+			</div>
+			<span class="glyphicon glyphicon-chevron-up" data-href="#five"></span>
+		</section>
+
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/prettify/prettify.js"></script>
+		<script src="fullscreenParallax.js"></script>
+		<script>
+			// $(fullscreenParallax);
+			// $(prettyPrint);
+			$(function() {
+				fullscreenParallax();
+				prettyPrint();
+
+				$(".glyphicon").click(function() {
+					var $this = $(this);
+					$target = $($this.data("href"));
+
+					$('html, body').stop(true).animate({
+						scrollTop: $target.offset().top
+					}, 1000);
+				});
+
+			});
+		</script>
+
+	</body>
+</html>
