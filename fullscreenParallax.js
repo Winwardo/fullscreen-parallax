@@ -58,7 +58,10 @@ function fullscreenParallax () {
 
 		// Set up the background image. We want to hook it into place with "fixed" and make sure it uses as much space as possible with "cover".
 		if (ySpeed !== 1) { // Don't do this if this isn't meant to parallax on the y, otherwise you can see jumpiness
-			sectionCSS["background-attachment"] = "fixed";
+			// Disable on iPhone/iPod/iPad as this isn't supported
+			if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexOf('iPod') == -1) && (navigator.userAgent.indexOf('iPad') == -1)) {
+				sectionCSS["background-attachment"] = "fixed";
+			}
 		}
 		sectionCSS["background-size"] = "cover";
 
